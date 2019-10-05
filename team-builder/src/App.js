@@ -1,29 +1,20 @@
 import React, { useState } from "react";
 
 import Form from "./Components/Form.js";
+import Members from "./Components/Members.js";
 
 import "./App.css";
 
 function App() {
   const [newMember, setNewMember] = useState([
-    {
-      name: "gdgd",
-      email: "gdgd",
-      role: "dgdg"
-    }
+    { name: "Tom from Myspace", email: "tom@myspace.com", role: "Coder Icon" }
   ]);
+
   return (
     <div className="App">
       <h1>Build Your Team!</h1>
       <Form newMember={newMember} setNewMember={setNewMember} />
-
-      {newMember.map((member, index) => (
-        <div className="member-entry" key={index}>
-          <h2>{member.name}</h2>
-          <h2>{member.email}</h2>
-          <h2>{member.role}</h2>
-        </div>
-      ))}
+      <Members newMember={newMember} />
     </div>
   );
 }
