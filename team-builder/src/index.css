@@ -134,6 +134,11 @@ table {
 
 html {
   font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
 }
 
 body {
@@ -175,15 +180,31 @@ code {
   width: 100%;
 }
 
-.form form input[type="text"] {
+input[type="text"],
+select {
   width: 100%;
+  padding: 0 10%;
+  margin: 8px 0;
+}
+
+.form form select {
+  display: flex;
+  flex-direction: column;
 }
 
 button {
   background: dodgerblue;
-  padding: 8px 15px;
+  padding: 0px 15px;
   color: white;
   border-radius: 3px;
   font-size: 1.6rem;
   margin: 10px 0;
+}
+
+.member-entry {
+  width: 40%;
+  font-size: 2rem;
+  background: blue;
+  color: white;
+  margin: 20px 20px;
 }

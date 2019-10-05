@@ -13,9 +13,7 @@ const Form = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(member.name);
-    console.log(member.email);
-    console.log(member.role);
+    console.log(member);
     resetInputs();
   };
 
@@ -44,13 +42,20 @@ const Form = () => {
         </label>
         <label>
           Role:
-          <input
+          <select
             type="text"
             placeholder="role"
             name="role"
             value={member.role}
             onChange={handleChange}
-          />
+          >
+            <option></option>
+            <option>Full Stack</option>
+            <option>UX Designer</option>
+            <option>Data Science</option>
+            <option>IOS Development</option>
+            <option>Android Development</option>
+          </select>
         </label>
         <button>Submit</button>
         <button onChange={resetInputs}>Reset</button>
