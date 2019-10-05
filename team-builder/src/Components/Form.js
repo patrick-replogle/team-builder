@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const Form = props => {
+  console.log(props);
   const [member, setMember] = useState({ name: "", email: "", role: "" });
 
   const handleChange = event => {
@@ -14,6 +15,7 @@ const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
     console.log(member);
+    props.setNewMember([{ ...props.newMember, member }]);
     resetInputs();
   };
 
