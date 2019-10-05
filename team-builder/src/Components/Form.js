@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+export const memberToEdit = event => {};
+
 const Form = props => {
   const [member, setMember] = useState({ name: "", email: "", role: "" });
 
@@ -13,7 +15,6 @@ const Form = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(member);
     props.setNewMember([member, ...props.newMember]);
     resetInputs();
   };

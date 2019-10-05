@@ -6,15 +6,34 @@ import Members from "./Components/Members.js";
 import "./App.css";
 
 function App() {
+  const [memberToEdit, setMemberToEdit] = useState();
+
+  const editMember = () => {
+    setMemberToEdit();
+  };
+
   const [newMember, setNewMember] = useState([
-    { name: "Tom from Myspace", email: "tom@myspace.com", role: "Coder Icon" }
+    {
+      name: "Tom from Myspace",
+      email: "tom@myspace.com",
+      role: "Coder and Meme Icon"
+    }
   ]);
 
   return (
     <div className="App">
-      <h1>Build Your Team!</h1>
-      <Form newMember={newMember} setNewMember={setNewMember} />
-      <Members newMember={newMember} />
+      <h1>Build Your Team</h1>
+      <Form
+        newMember={newMember}
+        setNewMember={setNewMember}
+        memberToEdit={memberToEdit}
+        setMemberToEdit={setMemberToEdit}
+      />
+      <Members
+        newMember={newMember}
+        memberToEdit={memberToEdit}
+        setMemberToEdit={editMember}
+      />
     </div>
   );
 }
