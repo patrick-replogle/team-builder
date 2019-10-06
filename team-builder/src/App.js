@@ -8,8 +8,8 @@ import "./App.css";
 function App() {
   const [memberToEdit, setMemberToEdit] = useState();
 
-  const editMember = () => {
-    setMemberToEdit();
+  const editMember = member => {
+    setMemberToEdit(member);
   };
 
   const [newMember, setNewMember] = useState([

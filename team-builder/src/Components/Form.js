@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-export const memberToEdit = event => {};
-
 const Form = props => {
   const [member, setMember] = useState({ name: "", email: "", role: "" });
 
@@ -9,7 +7,7 @@ const Form = props => {
     setMember({ ...member, [event.target.name]: event.target.value });
   };
 
-  const resetInputs = event => {
+  const resetInputs = () => {
     setMember({ name: "", email: "", role: "" });
   };
 
@@ -60,7 +58,9 @@ const Form = props => {
           </select>
         </label>
         <button>Submit</button>
-        <button onChange={resetInputs}>Reset</button>
+        <button type="button" onClick={resetInputs}>
+          Reset
+        </button>
       </form>
     </div>
   );
